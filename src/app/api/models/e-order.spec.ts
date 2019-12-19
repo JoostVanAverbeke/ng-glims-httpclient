@@ -73,7 +73,7 @@ describe('EOrder', () => {
     expect(new EOrder()).toBeTruthy();
   });
 
-  it('deserializes a eorder json object to an EOrder object', () => {
+  it('deserializes an eOrder json object to an EOrder object', () => {
     expect(eOrder instanceof EOrder).toBeTruthy();
     expect(eOrder.RecId_).toEqual(2496);
     expect(eOrder.HasAttachment_).toBeFalsy();

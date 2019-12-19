@@ -7,6 +7,7 @@ export class DsOrdersByInternalIdFlat implements FlatDataSetHandle, Deserializab
   deserialize(input: any) {
     let eOrder: EOrder;
     Object.assign(this, input);
+    this.eOrders = [];
     if (input.eOrder) {
       for (const eOrderEntry of input.eOrder) {
         eOrder = new EOrder().deserialize(eOrderEntry);

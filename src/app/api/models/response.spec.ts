@@ -82,6 +82,7 @@ describe('Response', () => {
   });
   it('deserializes a response json object to a Response object', () => {
     expect(response instanceof Response).toBeTruthy();
+    expect(response.DataSetHandle).not.toBeNull();
   });
   it('should create an instance', () => {
     expect(new Response()).toBeTruthy();
