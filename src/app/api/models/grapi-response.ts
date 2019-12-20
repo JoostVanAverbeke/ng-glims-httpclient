@@ -1,8 +1,7 @@
 import {DataSetHandle} from './data-set-handle';
-import {DsOrdersByInternalIdFlat} from './ds-orders-by-internal-id-flat';
 import {Deserializable} from './deserializable.model';
 
-export class Response implements Deserializable {
+export class GRAPIResponse implements Deserializable {
   PrevContext: number;
   NextContext: number;
   DataSetHandle: DataSetHandle;

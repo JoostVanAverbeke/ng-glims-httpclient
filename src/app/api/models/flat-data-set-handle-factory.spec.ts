@@ -1,6 +1,6 @@
 import { FlatDataSetHandleFactory } from './flat-data-set-handle-factory';
 import { DsOrdersByInternalIdFlat} from './ds-orders-by-internal-id-flat';
-import {Response} from './response';
+import {GRAPIResponse} from './grapi-response';
 
 describe('FlatDataSetHandleFactory', () => {
   let dsOrdersByInternalIdFlat: DsOrdersByInternalIdFlat;

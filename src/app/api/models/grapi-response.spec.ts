@@ -1,7 +1,7 @@
-import { Response } from './response';
+import { GRAPIResponse } from './grapi-response';
 
 describe('Response', () => {
-  let response: Response;
+  let response: GRAPIResponse;
   let jsonResponse;
   beforeEach(() => {
     jsonResponse = {
@@ -78,13 +78,13 @@ describe('Response', () => {
         }
       }
     };
-    response = new Response().deserialize(jsonResponse);
+    response = new GRAPIResponse().deserialize(jsonResponse);
   });
-  it('deserializes a response json object to a Response object', () => {
-    expect(response instanceof Response).toBeTruthy();
+  it('deserializes a response json object to a GRAPIResponse object', () => {
+    expect(response instanceof GRAPIResponse).toBeTruthy();
     expect(response.DataSetHandle).not.toBeNull();
   });
   it('should create an instance', () => {
-    expect(new Response()).toBeTruthy();
+    expect(new GRAPIResponse()).toBeTruthy();
   });
 });
