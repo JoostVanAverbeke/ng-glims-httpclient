@@ -2,8 +2,6 @@ import {HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
 import {DefaultHeaders, RESTClient} from './restclient';
 import {catchError, flatMap} from 'rxjs/operators';
 import {Observable, of, throwError} from 'rxjs';
-import {GRAPIResponse} from "../models/grapi-response";
-import {DsOrdersByInternalIdFlat} from "../models/ds-orders-by-internal-id-flat";
 
 @DefaultHeaders({
   'Content-Type': 'application/json',

@@ -1,20 +1,27 @@
 import {Component, OnInit} from '@angular/core';
-import {EOrderService} from './api/e-order.service';
-import {EOrder} from './api/models/e-order';
-import {DsOrdersByInternalIdFlat} from './api/models/ds-orders-by-internal-id-flat';
+import {User} from './models/user';
+import {Router} from '@angular/router';
+import {AuthenticationService} from './api/authentication.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit {
+
+export class AppComponent {
+  currentUser: User;
   title = 'ng-glims-httpclient';
-  eOrders: EOrder[];
 
-  constructor(private eOrderService: EOrderService) {}
+  constructor(
+    private router: Router,
+    private authenticationService: AuthenticationService
+  ) {
+    this.authenticationService.currentUser.subscribe(x => this.currentUser = x);
+  }
 
-  ngOnInit() {
-    this.eOrderService.getEOrders().subscribe(eOrders => this.eOrders = eOrders);
+  logout() {
+    this.authenticationService.logout();
+    this.router.navigate(['/login']);
   }
 }
