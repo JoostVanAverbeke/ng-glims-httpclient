@@ -1,0 +1,3 @@
+{
+  "/grapi/rest/grapi/*": "/$1"
+}
