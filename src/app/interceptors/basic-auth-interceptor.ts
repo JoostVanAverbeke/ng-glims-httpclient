@@ -10,7 +10,12 @@ export class BasicAuthInterceptor implements HttpInterceptor {
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     // add authorization header with basic auth credentials if available
     const currentUser = this.authenticationService.currentUserValue;
-    if (currentUser && currentUser.authdata) {
+    if (request.url.search('grapi/rest/grapi') > 0) {
+      /*
+        Work around: do not intercept grapi request -> pass them through
+       */
+      request = request.clone();
+    } else if (currentUser && currentUser.authdata) {
       request = request.clone({
         setHeaders: {
           Authorization: `Basic ${currentUser.authdata}`

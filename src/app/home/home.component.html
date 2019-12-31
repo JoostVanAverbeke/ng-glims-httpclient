@@ -1,14 +1,21 @@
+<!--<div class="card mt-4">-->
+  <!--<h4 class="card-header">You're logged in with Angular 8 & Basic HTTP Authentication!!</h4>-->
+  <!--<div class="card-body">-->
+    <!--<h6>Users from secure api end point</h6>-->
+    <!--<div *ngIf="loading" class="spinner-border spinner-border-sm"></div>-->
+    <!--<ul *ngIf="users">-->
+      <!--<li *ngFor="let user of users">{{user.firstName}} {{user.lastName}}</li>-->
+    <!--</ul>-->
+  <!--</div>-->
+<!--</div>-->
+
 <div class="card mt-4">
   <h4 class="card-header">You're logged in with Angular 8 & Basic HTTP Authentication!!</h4>
   <div class="card-body">
-    <h6>Users from secure api end point</h6>
+    <h6>Orders from grapi end point</h6>
     <div *ngIf="loading" class="spinner-border spinner-border-sm"></div>
-    <ul *ngIf="users">
-      <li *ngFor="let user of users">{{user.firstName}} {{user.lastName}}</li>
+    <ul *ngIf="eOrders">
+      <li *ngFor="let eOrder of eOrders">{{eOrder.ord_InternalId}} {{eOrder.ObjectExternalization}}</li>
     </ul>
   </div>
 </div>
-
-<!--<h3>-->
-  <!--{{ eOrder.ord_InternalId }}-->
-<!--</h3>-->

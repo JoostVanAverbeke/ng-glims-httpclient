@@ -12,30 +12,30 @@ import {UserService} from '../api/user.service';
 })
 export class HomeComponent implements OnInit {
 
-  // loading = false;
-  // eOrders: EOrder[];
-  //
-  // constructor(private eOrderService: EOrderService) {}
-  //
-  // ngOnInit() {
-  //   this.loading = true;
-  //   this.eOrderService.getEOrders().subscribe(eOrders => {
-  //     this.loading = false;
-  //     this.eOrders = eOrders;
-  //   });
-  // }
-  users: User[];
-  loading: boolean;
+  loading = false;
+  eOrders: EOrder[];
 
-  constructor(private userService: UserService) { }
+  constructor(private eOrderService: EOrderService) {}
 
   ngOnInit() {
     this.loading = true;
-    this.userService.getAll().pipe(first()).subscribe(users => {
+    this.eOrderService.getEOrders().subscribe(eOrders => {
       this.loading = false;
-      this.users = users;
+      this.eOrders = eOrders;
     });
   }
+  // users: User[];
+  // loading: boolean;
+  //
+  // constructor(private userService: UserService) { }
+  //
+  // ngOnInit() {
+  //   this.loading = true;
+  //   this.userService.getAll().pipe(first()).subscribe(users => {
+  //     this.loading = false;
+  //     this.users = users;
+  //   });
+  // }
 
 
 }
